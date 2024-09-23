@@ -1,0 +1,15 @@
+function verificarHoras() {
+    const agora = new Date();
+    const novaHora = new Date(agora);
+    novaHora.setMinutes(novaHora.getMinutes() + 1);
+
+    const horasIguais = (agora.getHours() === novaHora.getHours()) && (agora.getMinutes() === novaHora.getMinutes());
+
+    // Log das horas
+    console.log(`Hora atual: ${agora.toLocaleTimeString('pt-BR')}`);
+    console.log(`Hora após adicionar 5 minutos: ${novaHora.toLocaleTimeString('pt-BR')}`);
+    console.log(`As horas são iguais? ${horasIguais ? 'Sim' : 'Não'}`);
+}
+
+// Verifica as horas a cada 20 segundos
+setInterval(verificarHoras, 20000); // 20000 milissegundos = 20 segundos

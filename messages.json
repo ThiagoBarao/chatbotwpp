@@ -1,0 +1,54 @@
+{
+    "mensagemPadrao": "Você entrou em contato com o Colégio Barão de Mauá. Sobre o que gostaria de conversar? \n1 - Atendimento\n2 - Comercial\n3 - Secretaria\n4 - Coordenação Infantil e Fundamental I\n5 - Coordenação Fundamental II e Médio\n6 - Financeiro\n7 - TI\n8 - Outros assuntos",
+    "opcoesSetores": {
+        "1": "👉 Atendimento",
+        "2": "👉 Comercial",
+        "3": "👉 Secretaria",
+        "4": "👉 Coordenação Infantil e Fundamental I",
+        "5": "👉 Coordenação Fundamental II e Médio",
+        "6": "👉 Financeiro",
+        "7": "👉 TI",
+        "8": "👉 Outros assuntos"
+    },
+    "mensagemErro": "Não existe",
+    "opcoesAtendimento_1":{
+        "Telefone": "11 2526-0088",
+        "E-mail": "thiago.azevedo@colegiobarao.com.",
+        "#": "Voltar"
+    },
+    "opcoesComercial_2":{
+        "1": "Valores para matricula",
+        "2": "Rematricula",
+        "3": "Agendar visitas",
+        "#": "Voltar"
+    },
+    "opcoesSecretaria_3":{
+        "1": "Alteração de cor carteirinha",
+        "2": "Histórico escolar",
+        "#": "Voltar"
+    },
+    "opcoesCoordenacoes_4_5":{
+        "1": "Acesso Plurall",
+        "2": "Agendar reunião",
+        "3": "Envio de carteirinhas",
+        "#": "Voltar"
+    },
+    "opcoesFinanceiro_6":{
+        "1": "Boletos à pagar",
+        "2": "Segunda via",
+        "3": "Envio de comprovantes",
+        "#": "Voltar"
+    },
+    "opcoesTI_7":{
+        "1": "Dados Sponte Agenda",
+        "2": "Dados E-mail",
+        "#": "Voltar"
+    },
+    "opcoesOutras_8":{
+        "#": "Voltar"
+    }
+    
+    
+
+
+}
