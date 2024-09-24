@@ -39,7 +39,7 @@ client.on('message', async message => {
     if (!estadosUsuarios[chatId]) return;
 
     // Verificando inatividade
-    verificarInatividade(chatId); // Verifica imediatamente após a mensagem
+    verificarInatividade(chatId);
 
     const { setorEscolhido } = estadosUsuarios[chatId];
 
@@ -68,10 +68,9 @@ client.on('message', async message => {
                     resposta += `${key} - ${value}\n`;
                 }
                 return client.sendMessage(chatId, resposta);
-            }
-            const subopcao = opcoes[ultimaMensagem];
-            if (subopcao) {
-                return client.sendMessage(chatId, `Você selecionou: ${subopcao}`);
+            } else {
+                // Se o número estiver fora do intervalo de setores disponíveis
+                return client.sendMessage(chatId, "Setor inexistente. Por favor, escolha um número válido.");
             }
         }
         return client.sendMessage(chatId, respostas.mensagemErro);
@@ -85,17 +84,22 @@ client.on('message', async message => {
 
     const opcoesKey = setores[setorEscolhido];
     const opcoes = respostas[`opcoes${opcoesKey}`];
-    // if (isNumber(ultimaMensagem)) {
-
-    // }
+    if (isNumber(ultimaMensagem)) {
+        const subopcao = opcoes[ultimaMensagem];
+        if (subopcao) {
+            return client.sendMessage(chatId, `Você selecionou: ${subopcao}`);
+        } else {
+            // Se a subopção não for válida dentro do setor
+            client.sendMessage(chatId, "Opção inexistente dentro deste setor. Por favor, escolha uma opção válida.");
+            let resposta = `Opções para ${respostas.opcoesSetores[setorEscolhido]}:\n`;
+            for (const [key, value] of Object.entries(opcoes)) {
+                resposta += `${key} - ${value}\n`;
+            }
+            return client.sendMessage(chatId, resposta);
+        }
+    }
 
     // Mensagem de erro e reenvio das opções
-    client.sendMessage(chatId, respostas.mensagemErro);
-    let resposta = `Opções para ${respostas.opcoesSetores[setorEscolhido]}:\n`;
-    for (const [key, value] of Object.entries(opcoes)) {
-        resposta += `${key} - ${value}\n`;
-    }
-    client.sendMessage(chatId, resposta);
 });
 
 // Verificação de inatividade em intervalos regulares
